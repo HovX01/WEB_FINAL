@@ -16,7 +16,6 @@ class Database
           'host' => $host,
           'port' => $port,
           'dbname' => $dbname,
-          'charset' => $charset,
           'username' => $username,
           'password' => $password
         ] = $config;
