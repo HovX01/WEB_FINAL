@@ -12,7 +12,7 @@ $db = App::resolve(Database::class);
 
 $sql = '
 CREATE TABLE IF NOT EXISTS migrations (
-    id SERIAL PRIMARY KEY,z
+    id SERIAL PRIMARY KEY,
     migration VARCHAR(255) NOT NULL,
     batch INT NOT NULL,
     migrated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
