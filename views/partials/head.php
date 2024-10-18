@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <?php
+        require_once('style.php')
+    ?>
 </head>
 
-<body class="h-full">
+<body id="app" class="h-full app">
     <div class="min-h-full">

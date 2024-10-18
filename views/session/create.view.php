@@ -1,61 +1,63 @@
 <?php require base_path('views/partials/head.php') ?>
-<?php require base_path('views/partials/nav.php') ?>
 
-<main>
-    <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="w-full max-w-md space-y-8">
-            <div>
-                <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                     alt="Your Company">
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Log In!</h2>
+<!-- BEGIN #app -->
+<div id="app" class="app">
+    <!-- BEGIN register -->
+    <div class="register register-with-news-feed">
+        <!-- BEGIN news-feed -->
+        <div class="news-feed">
+            <div class="news-image" style="background-image: url(../assets/img/login-bg/login-bg-15.jpg)"></div>
+            <div class="news-caption">
+                <h4 class="caption-title">Furniture</h4>
             </div>
-
-            <form class="mt-8 space-y-6" action="/session" method="POST">
-                <div class="-space-y-px rounded-md shadow-sm">
-                    <div>
-                        <label for="email" class="sr-only">Email address</label>
-                        <input id="email"
-                               name="email"
-                               type="email"
-                               autocomplete="email"
-                               required
-                               class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                               placeholder="Email address"
-                               value="<?= old('email') ?>">
-                    </div>
-
-                    <div>
-                        <label for="password" class="sr-only">Password</label>
-                        <input id="password"
-                               name="password"
-                               type="password"
-                               autocomplete="current-password"
-                               required
-                               class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                               placeholder="Password">
-                    </div>
-                </div>
-
-                <div>
-                    <button type="submit"
-                            class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        Log In
-                    </button>
-                </div>
-
-                <ul>
-                    <?php if (isset($errors['email'])) : ?>
-                        <li class="text-red-500 text-xs mt-2"><?= $errors['email'] ?></li>
-                    <?php endif; ?>
-
-                    <?php if (isset($errors['password'])) : ?>
-                        <li class="text-red-500 text-xs mt-2"><?= $errors['password'] ?></li>
-                    <?php endif; ?>
-                </ul>
-            </form>
         </div>
-    </div>
-</main>
+        <!-- END news-feed -->
 
+        <!-- BEGIN register-container -->
+        <div class="register-container">
+            <!-- BEGIN register-header -->
+            <div class="register-header mb-25px h1">
+                <div class="mb-1">Sign Up</div>
+            </div>
+            <!-- END register-header -->
+
+            <!-- BEGIN register-content -->
+            <div class="register-content">
+                <form action="/session" method="POST" class="fs-13px" data-parsley-validate="true">
+                    <ul>
+                        <?php if (isset($errors['email'])) : ?>
+                            <li class="text-red-500 text-xs mt-2"><?= $errors['email'] ?></li>
+                        <?php endif; ?>
+
+                        <?php if (isset($errors['password'])) : ?>
+                            <li class="text-red-500 text-xs mt-2"><?= $errors['password'] ?></li>
+                        <?php endif; ?>
+                    </ul>
+                    <div class="mb-3">
+                        <label class="mb-2">Email <span class="text-danger">*</span></label>
+                        <input type="email" name="email" class="form-control fs-13px" data-parsley-required="true" placeholder="Email address" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="mb-2">Password <span class="text-danger">*</span></label>
+                        <input type="password" name="password" class="form-control fs-13px" data-parsley-required="true" placeholder="Password" />
+                    </div>
+                    <div class="mb-4">
+                        <button type="submit" class="btn btn-theme d-block w-100 btn-lg h-45px fs-13px">Login</button>
+                    </div>
+                    <div class="mb-4 pb-5">
+                        Don't Have a account? Click <a href="/register">here</a> to Register.
+                    </div>
+                </form>
+            </div>
+            <!-- END register-content -->
+        </div>
+        <!-- END register-container -->
+    </div>
+    <!-- END register -->
+
+    <!-- BEGIN scroll-top-btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- END scroll-top-btn -->
+</div>
+<!-- END #app -->
 <?php require base_path('views/partials/footer.php') ?>

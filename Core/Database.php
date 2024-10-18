@@ -9,9 +9,18 @@ class Database
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = 'root', $password = '')
+    public function __construct($config)
     {
-        $dsn = 'mysql:' . http_build_query($config, '', ';');
+        [
+          'driver' => $driver,
+          'host' => $host,
+          'port' => $port,
+          'dbname' => $dbname,
+          'charset' => $charset,
+          'username' => $username,
+          'password' => $password
+        ] = $config;
+        $dsn = "$driver:" . http_build_query(['host' => $host,'port' => $port, 'dbname' => $dbname], '', ';');
 
         $this->connection = new PDO($dsn, $username, $password, [
            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

@@ -20,4 +20,9 @@ class Validator
     {
         return $value > $greaterThan;
     }
+
+    public static function required($value): bool
+    {
+        return strlen($value) > 0;
+    }
 }
