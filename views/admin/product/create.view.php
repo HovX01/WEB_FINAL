@@ -86,7 +86,7 @@ $productClass = 'active';
                 </div>
                 <div class="card-body">
                     <div id="dropzone">
-                        <form action="/file/upload" class="dropzone needsclick" id="demo-upload">
+                        <form action="/file/upload" class="dropzone needsclick" id="fileUploader">
                             <div class="dz-message needsclick">
                                 Drop files <b>here</b> or <b>click</b> to upload.<br />
                                 <span class="dz-note needsclick">
@@ -119,7 +119,8 @@ $script = [
     "/admin-asset/plugins/jquery-migrate/dist/jquery-migrate.min.js",
     "/admin-asset/plugins/tag-it/js/tag-it.min.js",
     "/admin-asset/js/demo/product-details.demo.js",
-    '/admin-asset/plugins/select2/dist/js/select2.min.js'
+    '/admin-asset/plugins/select2/dist/js/select2.min.js',
+    '/admin-asset/js/dropzone.js'
 ];
 require base_path('views/admin/partial/script.php')
 ?>

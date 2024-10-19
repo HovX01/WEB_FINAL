@@ -81,6 +81,7 @@ export default class Dropzone extends Emitter {
     }
 
     if (this.element.dropzone) {
+      return this.element.dropzone;
       throw new Error("Dropzone already attached.");
     }
 

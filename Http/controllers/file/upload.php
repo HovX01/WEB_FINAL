@@ -3,12 +3,10 @@
 $targetDirectory = "uploads/";
 @mkdir($targetDirectory, 0777, true);
 
-$targetPath = $targetDirectory . basename($_FILES['file']['name']);
+$fileExtension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+$targetPath = $targetDirectory. uniqid() . '_' . time() . '.' . $fileExtension;
 
-$name = basename($_FILES['file']['name']);
-$randomName = rand(1000, 9999);
-$targetPath = $targetDirectory . $randomName . $name;
-
+header('Content-Type: application/json');
 if (move_uploaded_file($_FILES['file']['tmp_name'], $targetPath)) {
     echo json_encode([
       'error' => '',
