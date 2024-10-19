@@ -2,7 +2,6 @@
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Gallery</h2>
     <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
   </div><!-- End Section Title -->
 
