@@ -16,7 +16,7 @@ $categoryClass = 'active';
             <div class="d-flex align-items-center mb-3">
                 <div>
                     <ol class="breadcrumb mb-2">
-                        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                         <li class="breadcrumb-item active">Category</li>
                     </ol>
                     <h1 class="page-header mb-0">Categories</h1>
@@ -43,25 +43,22 @@ $categoryClass = 'active';
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="align-middle">Cotton</td>
-                                    <td class="align-middle" data-orderable="false">
-                                        <a href="/admin/product/1">
-                                            first product
-                                        </a>,&nbsp;
-                                        <a href="/admin/product/2">
-                                            second product
-                                        </a>,&nbsp;
-                                        <a href="/admin/product">
-                                            ... more
-                                        </a>
-                                    </td>
-
-                                    <td class="align-middle">
-                                        <a href="/admin/category/edit/1" class="btn btn-sm btn-outline-warning">Edit</a>
-                                        <a href="/admin/category/delete/1" class="btn btn-sm btn-outline-danger">Delete</a>
-                                    </td>
-                                </tr>
+                                <?php foreach ($categories as $category): ?>
+                                    <tr>
+                                        <td class="align-middle"><?= $category['title'] ?></td>
+                                        <td class="align-middle" data-orderable="false">
+                                            <a href="/admin/product?category=<?= $category['id'] ?>">
+                                                <?= $category['products_count'] ?> product(s)
+                                            </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="/admin/category/<?= $category['id'] ?>/edit" class="btn btn-sm btn-outline-warning">Edit</a>
+                                            <form action="/admin/category/<?= $category['id'] ?>/delete" method="post" class="d-inline">
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

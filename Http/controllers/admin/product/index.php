@@ -7,8 +7,7 @@ $db = App::resolve(Database::class);
 $sql = 'SELECT * FROM products';
 
 if (isset($_GET['category'])) {
-    $sql .= ' WHERE category_id = :category';
-    $db->query($sql, ['category' => $_GET['category']]);
+    $sql .= ' WHERE category_id = '.$_GET['category'];
 }
 // load the category
 $products = $db->query($sql)->get() ?? [];
