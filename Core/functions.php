@@ -46,6 +46,11 @@ function view($path, $attributes = [])
     require base_path('views/' . $path);
 }
 
+//function env($key, $default = '')
+//{
+//    return getenv($key) ?? $default;
+//}
+
 function redirect($path)
 {
     header("location: {$path}");
