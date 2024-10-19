@@ -13,6 +13,8 @@ $router->get('/checkout', 'checkout/index.php')->only('auth');
 // admin panel
 $router->get('/admin', 'admin/index.php')->only('admin');
 
+$router->post('/file/upload', 'file/upload.php')->only('admin');
+
 $router->get('/admin/product', 'admin/product/index.php')->only('admin');
 $router->get('/admin/product/create', 'admin/product/create.php')->only('admin');
 $router->get('/admin/product/{id}', 'admin/product/show.php')->only('admin');
