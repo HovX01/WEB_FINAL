@@ -17,7 +17,8 @@ $router->post('/file/upload', 'file/upload.php')->only('admin');
 
 $router->get('/admin/product', 'admin/product/index.php')->only('admin');
 $router->get('/admin/product/create', 'admin/product/create.php')->only('admin');
-$router->get('/admin/product/{id}', 'admin/product/show.php')->only('admin');
+$router->get('/admin/product/{slug}', 'admin/product/show.php')->only('admin');
+$router->get('/admin/product/{slug}/edit', 'admin/product/edit.php')->only('admin');
 
 $router->get('/admin/category', 'admin/category/index.php')->only('admin');
 $router->get('/admin/order', 'admin/order/index.php')->only('admin');

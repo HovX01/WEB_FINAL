@@ -13,7 +13,7 @@ $categories = $db->query('SELECT * FROM categories')->get();
 $product['category'] = $db->query('SELECT * FROM categories WHERE id = :id', ['id' => $product['category_id']])->find();
 
 if ($product) {
-    return view('admin/product/show.view.php', [
+    return view('admin/product/edit.view.php', [
         'product' => $product,
         'categories' => $categories
     ]);

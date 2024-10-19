@@ -57,7 +57,7 @@ class Router
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
-            $pattern = preg_replace('#\{[a-zA-Z_]+\}#', '([a-zA-Z0-9_]+)', $route['uri']);
+            $pattern = preg_replace('#\{[a-zA-Z_]+\}#', '([a-zA-Z0-9-_]+)', $route['uri']);
             $pattern = "#^" . $pattern . "$#";
 
             // Check if the URI matches the route pattern

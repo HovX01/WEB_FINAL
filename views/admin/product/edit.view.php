@@ -20,11 +20,11 @@ $productClass = 'active';
             <div class="d-flex align-items-center mb-3">
                 <div>
                     <ol class="breadcrumb mb-2">
-                        <li class="breadcrumb-item"><a href="/admin;">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                         <li class="breadcrumb-item"><a href="/admin/product">Product</a></li>
                         <li class="breadcrumb-item active"><i class="fa fa-arrow-back"></i> Edit</li>
                     </ol>
-                    <h1 class="page-header mb-0">Add Product</h1>
+                    <h1 class="page-header mb-0">Edit Product</h1>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@ $productClass = 'active';
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="/admin/product/update/<?= $product['id'] ?>" method="post">
+                    <form action="/admin/product/<?= $product['id'] ?>/update" method="post">
                         <div class="row mb-3">
                             <div class="col-lg-9">
                                 <div class="mb-3">
@@ -52,7 +52,7 @@ $productClass = 'active';
                                     <label class="form-label">Slug</label>
                                     <input type="text" class="form-control" name="slug"
                                            placeholder="Enter product slug"
-                                           value="<?= $product['slug'] ?>">
+                                           value="<?= $product['slug'] ?>"
                                     >
                                 </div>
                             </div>
@@ -63,15 +63,21 @@ $productClass = 'active';
                                     <label class="form-label" for="category">Category</label>
                                     <select id="category" class="default-select2 form-control">
                                         <?php foreach ($categories as $category): ?>
-                                            <option value="<?= $category['id'] ?>" <?php if ($product['category_id'] == $category['id']) echo 'selected' ?>><?= $category['name'] ?></option>
+                                            <option value="<?= $category['id'] ?>" <?php if ($product['category_id'] == $category['id']) echo 'selected' ?>><?= $category['title'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="price">Price</label>
+                                    <input type="number" class="form-control" name="price" placeholder="Product price" value="<?= $product['price'] ?>">
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3 form-check form-switch">
                             <label class="form-label" for="available">Available</label>
-                            <input type="checkbox" class="form-check-input <?php if ($product['available']) echo 'is-valid' ?>" id="available">
+                            <input type="checkbox" class="form-check-input " id="available" <?php if ($product['available']) echo 'checked' ?>>
                         </div>
                         <div class="">
                             <label class="form-label">Description</label>

@@ -20,8 +20,9 @@ $productClass = 'active';
             <div class="d-flex align-items-center mb-3">
                 <div>
                     <ol class="breadcrumb mb-2">
-                        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-                        <li class="breadcrumb-item active"><i class="fa fa-arrow-back"></i> Product Details</li>
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/product">Product</a></li>
+                        <li class="breadcrumb-item active"><i class="fa fa-arrow-back"></i> <?= $product['title'] ?></li>
                     </ol>
                     <h1 class="page-header mb-0">Product Details</h1>
                 </div>
@@ -42,14 +43,14 @@ $productClass = 'active';
                         <div class="col-lg-9">
                             <div class="mb-3">
                                 <label class="form-label">Title</label>
-                                <input type="text" class="form-control" name="title" placeholder="Product name">
+                                <input type="text" class="form-control" name="title" placeholder="Product name" value="<?= $product['title'] ?>">
                             </div>
                         </div>
 
                         <div class="col-lg-3">
                             <div class="mb-3">
                                 <label class="form-label">Slug</label>
-                                <input type="text" class="form-control" name="slug" placeholder="Enter product slug">
+                                <input type="text" class="form-control" name="slug" placeholder="Enter product slug" value="<?= $product['slug'] ?>">
                             </div>
                         </div>
                     </div>
@@ -58,21 +59,30 @@ $productClass = 'active';
                             <div class="mb-3">
                                 <label class="form-label" for="category">Category</label>
                                 <select id="category" class="default-select2 form-control">
-                                    <option value="AK">Alaska</option>
-                                    <option value="HI">Hawaii</option>
+                                    <?php foreach ($categories as $category): ?>
+                                        <option value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="price">Price</label>
+                                <input type="number" class="form-control" name="price" placeholder="Product price" value="<?= $product['price'] ?>">
                             </div>
                         </div>
                     </div>
                     <div class="mb-3 form-check form-switch">
                         <label class="form-label" for="available">Available</label>
-                        <input type="checkbox" class="form-check-input" id="available">
+                        <input type="checkbox" class="form-check-input" id="available" <?= $product['available'] ? 'checked' : '' ?>>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <div class="form-control p-0 overflow-hidden">
                             <textarea class="textarea form-control" id="wysihtml5" placeholder="Enter text ..."
-                                      rows="12"></textarea>
+                                      rows="12">
+                                <?= $product['description'] ?>
+                            </textarea>
                         </div>
                     </div>
                 </div>
