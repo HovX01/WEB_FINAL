@@ -8,6 +8,7 @@ require 'vendor/autoload.php';
 
 const BASE_PATH = __DIR__.'/';
 require BASE_PATH . 'Core/functions.php';
+require BASE_PATH . 'bootstrap.php';
 
 $config = require base_path('config.php');
 
