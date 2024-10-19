@@ -9,3 +9,5 @@ $router->get('/login', 'session/create.php')->only('guest');
 $router->post('/session', 'session/store.php')->only('guest');
 $router->get('/logout', 'session/destroy.php')->only('auth');
 
+$router->get('/checkout', 'checkout/index.php')->only('auth');
+
