@@ -1,4 +1,8 @@
-<?php require base_path('views/admin/partial/head.php') ?>
+<?php
+require base_path('views/admin/partial/head.php');
+$title = 'Dashboard';
+$dashboardClass = 'active';
+?>
 
 	<!-- BEGIN #app -->
 	<div id="app" class="app app-header-fixed app-sidebar-fixed app-with-light-sidebar">

@@ -3,6 +3,7 @@ $style = [
     '/admin-asset/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css',
     '/admin-asset/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css',
 ];
+$title = 'Category';
 require base_path('views/admin/partial/head.php');
 $categoryClass = 'active';
 ?>
@@ -52,9 +53,20 @@ $categoryClass = 'active';
                                             </a>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="/admin/category/<?= $category['id'] ?>/edit" class="btn btn-sm btn-outline-warning">Edit</a>
-                                            <form action="/admin/category/<?= $category['id'] ?>/delete" method="post" class="d-inline">
-                                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                            <a href="/admin/category/<?= $category['id'] ?>/edit"
+                                               class="btn btn-sm btn-outline-warning">
+                                                <i class="fa fa-edit"></i>
+                                                Edit
+                                            </a>
+                                            <form action="/admin/category/<?= $category['id'] ?>/delete" method="post"
+                                                  class="d-inline">
+                                                <button
+                                                        type="submit" class="btn btn-sm btn-outline-danger"
+                                                        onclick="return confirm('Are you sure you want to delete this product?')"
+                                                >
+                                                    <i class="fa fa-trash"></i>
+                                                    Delete
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>

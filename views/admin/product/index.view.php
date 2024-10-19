@@ -3,6 +3,7 @@ $style = [
     '/admin-asset/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css',
     '/admin-asset/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css',
 ];
+$title = 'Product';
 require base_path('views/admin/partial/head.php');
 $productClass = 'active';
 ?>
@@ -94,16 +95,34 @@ $productClass = 'active';
                                             <?php endif; ?>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="/admin/category/<?= $product['category']['id'] ?>/edit">
-                                                <?= $product['category']['title'] ?>
-                                            </a>
-
+                                            <?php if ($product['category']): ?>
+                                                <a href="/admin/category/<?= $product['category']['id'] ?>/edit">
+                                                    <?= $product['category']['title'] ?>
+                                                </a>
+                                            <?php else: ?>
+                                                <span class="text-muted">No Category</span>
+                                            <?php endif; ?>
                                         </td>
                                         <td class="align-middle">
                                             <a href="/admin/product/<?= $product['slug'] ?>/edit"
-                                               class="btn btn-sm btn-outline-warning">Edit</a>
-                                            <a href="/admin/product/<?= $product['id'] ?>/delete"
-                                               class="btn btn-sm btn-outline-danger">Delete</a>
+                                               class="btn btn-sm btn-outline-warning">
+                                                <i class="fa fa-edit"></i>
+                                                Edit
+                                            </a>
+                                            <form
+                                                    class="d-inline-block"
+                                                    action="/admin/product/<?= $product['id'] ?>/delete"
+                                                    method="post"
+                                            >
+                                                <button
+                                                        type="submit"
+                                                        class="btn btn-sm btn-outline-danger"
+                                                        onclick="return confirm('Are you sure you want to delete this product?')"
+                                                >
+                                                    <i class="fa fa-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

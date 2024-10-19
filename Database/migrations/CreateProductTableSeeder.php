@@ -12,7 +12,7 @@ class CreateProductTableSeeder {
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('description')->nullable();
-            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->boolean('available')->default(true);
             $table->float('price')->default(0);
             $table->string('image')->nullable();

@@ -17,11 +17,11 @@ $router->post('/file/upload', 'file/upload.php')->only('admin');
 
 $router->get('/admin/product', 'admin/product/index.php')->only('admin');
 $router->get('/admin/product/create', 'admin/product/create.php')->only('admin');
-$router->post('/admin/store', 'admin/product/store.php')->only('admin');
+$router->post('/admin/product/store', 'admin/product/store.php')->only('admin');
 $router->get('/admin/product/{slug}', 'admin/product/show.php')->only('admin');
 $router->get('/admin/product/{slug}/edit', 'admin/product/edit.php')->only('admin');
-$router->get('/admin/product/{slug}/update', 'admin/product/update.php')->only('admin');
-$router->post('/admin/product/{slug}/delete', 'admin/product/delete.php')->only('admin');
+$router->post('/admin/product/{id}/update', 'admin/product/update.php')->only('admin');
+$router->post('/admin/product/{id}/delete', 'admin/product/delete.php')->only('admin');
 
 $router->get('/admin/category', 'admin/category/index.php')->only('admin');
 $router->get('/admin/category/create', 'admin/category/create.php')->only('admin');

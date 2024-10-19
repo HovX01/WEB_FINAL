@@ -9,6 +9,11 @@
 
     <link rel="stylesheet" href="/admin-asset/css/app.min.css">
     <link rel="stylesheet" href="/admin-asset/css/vendor.min.css">
+    <style>
+        :root {
+            --bs-body-font-size: 0.875rem;
+        }
+    </style>
     <?php
     if (isset($style) && count($style) > 0) {
         foreach ($style as $item) {

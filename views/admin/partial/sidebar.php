@@ -74,60 +74,60 @@
                     <div class="menu-text">Order</div>
                 </a>
             </div>
-            <div class="menu-item has-sub">
-                <a href="javascript:;" class="menu-link">
-                    <div class="menu-icon">
-                        <?php
-                        $icon ??= '';
-                        if ($icon == 'ionicons') {
-                            echo '<ion-icon name="git-branch-outline"></ion-icon>';
-                        } else if ($icon == 'lineicons') {
-                            echo '<i class="icon-list"></i>';
-                        } else {
-                            echo '<i class="fa fa-align-left"></i>';
-                        }
-                        ?>
-                    </div>
-                    <div class="menu-text">Menu Level</div>
-                    <div class="menu-caret"></div>
-                </a>
-                <div class="menu-submenu">
-                    <div class="menu-item has-sub">
-                        <a href="javascript:;" class="menu-link">
-                            <div class="menu-text">Menu 1.1</div>
-                            <div class="menu-caret"></div>
-                        </a>
-                        <div class="menu-submenu">
-                            <div class="menu-item has-sub">
-                                <a href="javascript:;" class="menu-link">
-                                    <div class="menu-text">Menu 2.1</div>
-                                    <div class="menu-caret"></div>
-                                </a>
-                                <div class="menu-submenu">
-                                    <div class="menu-item"><a href="javascript:;" class="menu-link">
-                                            <div class="menu-text">Menu 3.1</div>
-                                        </a></div>
-                                    <div class="menu-item"><a href="javascript:;" class="menu-link">
-                                            <div class="menu-text">Menu 3.2</div>
-                                        </a></div>
-                                </div>
-                            </div>
-                            <div class="menu-item"><a href="javascript:;" class="menu-link">
-                                    <div class="menu-text">Menu 2.2</div>
-                                </a></div>
-                            <div class="menu-item"><a href="javascript:;" class="menu-link">
-                                    <div class="menu-text">Menu 2.3</div>
-                                </a></div>
-                        </div>
-                    </div>
-                    <div class="menu-item"><a href="javascript:;" class="menu-link">
-                            <div class="menu-text">Menu 1.2</div>
-                        </a></div>
-                    <div class="menu-item"><a href="javascript:;" class="menu-link">
-                            <div class="menu-text">Menu 1.3</div>
-                        </a></div>
-                </div>
-            </div>
+<!--            <div class="menu-item has-sub">-->
+<!--                <a href="javascript:;" class="menu-link">-->
+<!--                    <div class="menu-icon">-->
+<!--                        --><?php
+//                        $icon ??= '';
+//                        if ($icon == 'ionicons') {
+//                            echo '<ion-icon name="git-branch-outline"></ion-icon>';
+//                        } else if ($icon == 'lineicons') {
+//                            echo '<i class="icon-list"></i>';
+//                        } else {
+//                            echo '<i class="fa fa-align-left"></i>';
+//                        }
+//                        ?>
+<!--                    </div>-->
+<!--                    <div class="menu-text">Menu Level</div>-->
+<!--                    <div class="menu-caret"></div>-->
+<!--                </a>-->
+<!--                <div class="menu-submenu">-->
+<!--                    <div class="menu-item has-sub">-->
+<!--                        <a href="javascript:;" class="menu-link">-->
+<!--                            <div class="menu-text">Menu 1.1</div>-->
+<!--                            <div class="menu-caret"></div>-->
+<!--                        </a>-->
+<!--                        <div class="menu-submenu">-->
+<!--                            <div class="menu-item has-sub">-->
+<!--                                <a href="javascript:;" class="menu-link">-->
+<!--                                    <div class="menu-text">Menu 2.1</div>-->
+<!--                                    <div class="menu-caret"></div>-->
+<!--                                </a>-->
+<!--                                <div class="menu-submenu">-->
+<!--                                    <div class="menu-item"><a href="javascript:;" class="menu-link">-->
+<!--                                            <div class="menu-text">Menu 3.1</div>-->
+<!--                                        </a></div>-->
+<!--                                    <div class="menu-item"><a href="javascript:;" class="menu-link">-->
+<!--                                            <div class="menu-text">Menu 3.2</div>-->
+<!--                                        </a></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="menu-item"><a href="javascript:;" class="menu-link">-->
+<!--                                    <div class="menu-text">Menu 2.2</div>-->
+<!--                                </a></div>-->
+<!--                            <div class="menu-item"><a href="javascript:;" class="menu-link">-->
+<!--                                    <div class="menu-text">Menu 2.3</div>-->
+<!--                                </a></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="menu-item"><a href="javascript:;" class="menu-link">-->
+<!--                            <div class="menu-text">Menu 1.2</div>-->
+<!--                        </a></div>-->
+<!--                    <div class="menu-item"><a href="javascript:;" class="menu-link">-->
+<!--                            <div class="menu-text">Menu 1.3</div>-->
+<!--                        </a></div>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <!-- BEGIN minify-button -->
             <div class="menu-item d-flex">

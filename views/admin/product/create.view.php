@@ -9,6 +9,7 @@ view('admin/partial/head.php', [
     ]
 ]);
 $productClass = 'active';
+$errors = session('errors', []);
 ?>
     <!-- BEGIN #app -->
     <div id="app" class="app app-header-fixed app-sidebar-fixed app-with-light-sidebar">
@@ -28,73 +29,131 @@ $productClass = 'active';
                 </div>
             </div>
 
-            <form action="/admin/product/store" method="post">
+            <form id="product-create" action="/admin/product/store" method="post" enctype="multipart/form-data">
                 <div class="card border-0 mb-4">
                     <div class="card-header h6 mb-0 bg-none p-3">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <i class="fa fa-plus-square fa-lg fa-fw text-dark text-opacity-50 me-1"></i>
-                                Add
+                                <i class="fa fa-store fa-lg fa-fw text-dark text-opacity-50 me-1"></i>
+                                Product Information
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-lg-9">
-                                <div class="mb-3">
-                                    <label class="form-label">Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Product name">
+                            <div class="col-lg-6">
+                                <div class="form-group mb-3 <?php if (isset($errors['title'])) : ?>text-danger<?php endif; ?>">
+                                    <label class="form-label" for="title">Title * </label>
+                                    <input
+                                            type="text"
+                                            class="form-control <?php if (isset($errors['title'])) : ?>is-invalid<?php endif; ?>"
+                                            id="title" name="title"
+                                            placeholder="Enter Product Title"
+                                            value="<?= old('title', null) ?>"
+                                            oninput="document.getElementById('slug').value = this.value.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');"
+                                    />
+                                    <?php if (isset($errors['title'])) : ?>
+                                        <div class="invalid-feedback"><?= $errors['title'] ?></div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
-                            <div class="col-lg-3">
-                                <div class="mb-3">
-                                    <label class="form-label">Slug</label>
-                                    <input type="text" class="form-control" name="slug"
-                                           placeholder="Enter product slug">
+                            <div class="col-lg-6">
+                                <div class="form-group mb-3 <?php if (isset($errors['slug'])) : ?>text-danger<?php endif; ?>">
+                                    <label class="form-label" for="slug">Slug *</label>
+                                    <input
+                                            id="slug" name="slug"
+                                            type="text"
+                                            class="form-control <?php if (isset($errors['slug'])) : ?>is-invalid<?php endif; ?>"
+                                            placeholder="Enter product slug"
+                                            value="<?= old('slug', null) ?>"
+                                    />
+                                    <?php if (isset($errors['slug'])) : ?>
+                                        <div class="invalid-feedback"><?= $errors['slug'] ?></div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-lg-6">
-                                <div class="mb-3">
+                                <div class="form-group mb-3">
                                     <label class="form-label" for="category">Category</label>
-                                    <select id="category" class="default-select2 form-control">
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
+                                    <select
+                                            id="category"
+                                            class="default-select2 form-control"
+                                            name="category_id"
+                                    >
+                                        <option >Select Category</option>
+                                        <?php foreach ($categories ?? [] as $category): ?>
+                                            <option value="<?= $category['id'] ?>" <?php if (old('category_id', null) == $category['id']) echo 'selected' ?> ><?= $category['title'] ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label" for="price">Price</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input
+                                                id="price" type="number" class="form-control" name="price"
+                                                placeholder="Product price"
+                                                value="<?= old('price', 0) ?>"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3 form-check form-switch">
+                        <div class="form-group mb-3 form-check form-switch">
                             <label class="form-label" for="available">Available</label>
-                            <input type="checkbox" class="form-check-input" id="available">
+                            <input
+                                    id="available" name="available"
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    <?php if (old('available', true)) echo 'checked' ?>
+                            />
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Description</label>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="wysihtml5">Description</label>
                             <div class="form-control p-0 overflow-hidden">
-                            <textarea class="textarea form-control" id="wysihtml5" placeholder="Enter text ..."
-                                      rows="12"></textarea>
+                            <textarea
+                                    class="textarea form-control"
+                                    name="description"
+                                    id="wysihtml5" placeholder="Enter text ..."
+                                    rows="12"
+                            >
+                                <?= old('description', null) ?>
+                            </textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card border-0 mb-4">
                     <div class="card-header h6 mb-0 bg-none p-3">
-                        <i class="fa fa-file-image fa-lg fa-fw @@if(context.theme != 'transparent'){text-dark}@@if(context.theme == 'transparent'){text-white} text-opacity-50 me-1"></i> Media
+                        <i class="fa fa-file-image fa-lg fa-fw @@if(context.theme != 'transparent'){text-dark}@@if(context.theme == 'transparent'){text-white} text-opacity-50 me-1"></i>
+                        Image
                     </div>
                     <div class="card-body">
                         <div id="dropzone">
-                            <form action="/file/upload" class="dropzone needsclick" id="fileUploader">
+                            <form action="/upload" class="dropzone needsclick" id="demo-upload">
                                 <div class="dz-message needsclick">
-                                    Drop files <b>here</b> or <b>click</b> to upload.<br />
-                                    <span class="dz-note needsclick">
-											(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
-										</span>
+                                    Drop files <b>here</b> or <b>click</b> to upload.<br/>
                                 </div>
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2">
+                    <a href="/admin/product" class="btn btn-secondary">
+                        <i class="fa fa-ban"></i> Cancel
+                    </a>
+                    <button
+                            type="submit"
+                            class="btn btn-primary"
+                            onclick="$('form#product-create').submit()"
+                    >
+                        <i class="fa fa-save"></i> Save
+                    </button>
                 </div>
             </form>
         </div>
