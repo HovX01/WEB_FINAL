@@ -11,6 +11,9 @@ echo <<< ELO
     <script src="/js/app.min.js"></script>
     <script src="/js/vendor.min.js"></script>
     
+    <script src="/js/e-commerce/app.min.js"></script>
+    <script src="/js/e-commerce/vendor.min.js"></script>
+    
     <!-- Main JS File -->
     <script src="/js/main.js"></script>
     

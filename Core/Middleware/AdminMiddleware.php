@@ -1,6 +1,7 @@
 <?php
 
 namespace Core\Middleware;
+
 use Core\App;
 use Core\Database;
 
