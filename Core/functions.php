@@ -62,6 +62,16 @@ function old($key, $default = '')
     return Core\Session::get('old')[$key] ?? $default;
 }
 
+function session($key, $default = '')
+{
+    return Core\Session::get($key) ?? $default;
+}
+
+function app($key)
+{
+    return \Core\App::resolve($key);
+}
+
 function str_slug($text, $separator = '-')
 {
     // replace non letter or digits by divider

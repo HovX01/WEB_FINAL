@@ -28,17 +28,17 @@ $productClass = 'active';
                 </div>
             </div>
 
-            <div class="card border-0 mb-4">
-                <div class="card-header h6 mb-0 bg-none p-3">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <i class="fa fa-plus-square fa-lg fa-fw text-dark text-opacity-50 me-1"></i>
-                            Add
+            <form action="/admin/product/store" method="post">
+                <div class="card border-0 mb-4">
+                    <div class="card-header h6 mb-0 bg-none p-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <i class="fa fa-plus-square fa-lg fa-fw text-dark text-opacity-50 me-1"></i>
+                                Add
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <form action="/admin/product/create" method="post">
+                    <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-lg-9">
                                 <div class="mb-3">
@@ -77,26 +77,26 @@ $productClass = 'active';
                                       rows="12"></textarea>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="card border-0 mb-4">
-                <div class="card-header h6 mb-0 bg-none p-3">
-                    <i class="fa fa-file-image fa-lg fa-fw @@if(context.theme != 'transparent'){text-dark}@@if(context.theme == 'transparent'){text-white} text-opacity-50 me-1"></i> Media
-                </div>
-                <div class="card-body">
-                    <div id="dropzone">
-                        <form action="/file/upload" class="dropzone needsclick" id="fileUploader">
-                            <div class="dz-message needsclick">
-                                Drop files <b>here</b> or <b>click</b> to upload.<br />
-                                <span class="dz-note needsclick">
-											(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
-										</span>
-                            </div>
-                        </form>
                     </div>
                 </div>
-            </div>
+                <div class="card border-0 mb-4">
+                    <div class="card-header h6 mb-0 bg-none p-3">
+                        <i class="fa fa-file-image fa-lg fa-fw @@if(context.theme != 'transparent'){text-dark}@@if(context.theme == 'transparent'){text-white} text-opacity-50 me-1"></i> Media
+                    </div>
+                    <div class="card-body">
+                        <div id="dropzone">
+                            <form action="/file/upload" class="dropzone needsclick" id="fileUploader">
+                                <div class="dz-message needsclick">
+                                    Drop files <b>here</b> or <b>click</b> to upload.<br />
+                                    <span class="dz-note needsclick">
+											(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+										</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <!-- END #content -->
         <?php require base_path('views/admin/partial/scroll-top-btn.php') ?>

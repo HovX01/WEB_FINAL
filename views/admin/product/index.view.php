@@ -94,14 +94,14 @@ $productClass = 'active';
                                             <?php endif; ?>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="/admin/category/<?= $product['category']['id'] ?>">
+                                            <a href="/admin/category/<?= $product['category']['id'] ?>/edit">
                                                 <?= $product['category']['title'] ?>
                                             </a>
 
                                         </td>
                                         <td class="align-middle">
                                             <a href="/admin/product/<?= $product['slug'] ?>/edit"
-                                               class="btn btn-sm btn-outline-primary">Edit</a>
+                                               class="btn btn-sm btn-outline-warning">Edit</a>
                                             <a href="/admin/product/<?= $product['id'] ?>/delete"
                                                class="btn btn-sm btn-outline-danger">Delete</a>
                                         </td>
