@@ -15,9 +15,6 @@
 <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <!--<link href="/css/e-commerce/vendor.min.css" rel="stylesheet">-->
-<link href="/css/e-commerce/app.min.css" rel="stylesheet">
 <!--<link href="/css/vendor.min.css" rel="stylesheet">-->
-<link href="/css/app.min.css" rel="stylesheet">
-
+<link href="/admin-asset/plugins/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
 <!-- Main CSS File -->
-<link href="/css/main.css" rel="stylesheet">

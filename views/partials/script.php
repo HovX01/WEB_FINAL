@@ -13,6 +13,7 @@ echo <<< ELO
     
     <script src="/js/e-commerce/app.min.js"></script>
     <script src="/js/e-commerce/vendor.min.js"></script>
+    <script src="/js/e-commerce/function.js"></script>
     
     <!-- Main JS File -->
     <script src="/js/main.js"></script>

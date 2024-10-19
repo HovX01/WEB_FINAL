@@ -14,6 +14,17 @@
                 <li><a href="#hero" class="active">Home<br></a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/checkout">Cart
+                    <?php
+                        if(isset($_SESSION['cart']) && $_SESSION['cart']){
+                            $allProductCount = 0;
+                            foreach($_SESSION['cart'] as $productId => $productCount){
+                                $allProductCount += $productCount;
+                            }
+                            echo '<span id="cart-count" class="badge bg-danger rounded-pill ms-auto pb-4px">'.$allProductCount.'</span>';
+                        }
+                    ?>
+                    </a></li>
                 <?php
                     if(isset($_SESSION['user']) && $_SESSION['user']){
                         echo '<li><a href="/logout">Logout</a></li>';

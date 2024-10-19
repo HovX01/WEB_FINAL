@@ -1,3 +1,9 @@
+<?php
+    $style = [
+      "/css/app.min.css",
+      "/css/main.css"
+    ];
+?>
 <?php require('partials/head.php') ?>
 <?php require('partials/nav.php') ?>
 
