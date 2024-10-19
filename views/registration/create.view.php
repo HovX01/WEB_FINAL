@@ -1,4 +1,10 @@
-<?php require base_path('views/partials/head.php') ?>
+<?php
+$style = [
+    "/css/app.min.css",
+    "/css/main.css"
+];
+require base_path('views/partials/head.php');
+?>
 
 <!-- BEGIN #app -->
 <div id="app" class="app">
