@@ -9,6 +9,9 @@ $router->get('/login', 'session/create.php')->only('guest');
 $router->post('/session', 'session/store.php')->only('guest');
 $router->get('/logout', 'session/destroy.php')->only('auth');
 $router->get('/checkout', 'checkout/index.php')->only('auth');
+$router->post('/checkout', 'checkout/store.php')->only('auth');
+$router->post('/card', 'checkout/card.php')->only('auth');
+$router->post('/card-remove', 'checkout/card-remove.php')->only('auth');
 
 // admin panel
 $router->get('/admin', 'admin/index.php')->only('admin');

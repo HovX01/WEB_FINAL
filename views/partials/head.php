@@ -6,6 +6,13 @@
     <?php
         require_once('style.php')
     ?>
+    <?php
+    if (isset($style) && count($style) > 0) {
+        foreach ($style as $item) {
+            echo "<link rel='stylesheet' href='{$item}'>";
+        }
+    }
+    ?>
 </head>
 
 <body id="app" class="h-full app">

@@ -45,9 +45,9 @@
                         <img src="<?php echo $product['image'] ?>" class="menu-img img-fluid" alt="">
                     </a>
                     <h4><?php echo $product['title'] ?></h4>
-                    <p class="price">
+                    <button type="button" class="btn btn-outline-primary price checkout-post" data-product-id="<?php echo $product['id'] ?>">
                         <?php echo $product['price'] ?>$
-                    </p>
+                    </button>
                 </div>
             <?php endforeach; ?>
             </div>
