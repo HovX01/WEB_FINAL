@@ -21,6 +21,13 @@ class App
         static::container()->bind($key, $resolver);
     }
 
+    /**
+     * Get the available container instance.
+     *
+     * @template T
+     * @param class-string<T>|null $key
+     * @return T|mixed
+     */
     public static function resolve($key)
     {
         return static::container()->resolve($key);

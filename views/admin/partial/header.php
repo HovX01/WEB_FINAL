@@ -1,10 +1,10 @@
 <?php
-global $router;
+    $user = $_SESSION['user'];
 ?>
 <div id="header" class="app-header">
     <!-- BEGIN navbar-header -->
     <div class="navbar-header">
-        <a href="/admin" class="navbar-brand"><span class="navbar-logo"></span> <b>Color</b> Admin</a>
+        <a href="/admin" class="navbar-brand"><span class="navbar-logo"></span> <b>Furniture</b> Admin</a>
         <button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -40,9 +40,11 @@ global $router;
                 <div class="image image-icon bg-gray-800 text-gray-600">
                     <i class="fa fa-user"></i>
                 </div>
-                <span class="d-none d-md-inline">Adam Schwartz</span> <b class="caret ms-10px"></b>
+                <span class="d-none d-md-inline">
+                    <?php echo $user['username'] ?? 'Unknown'; ?>
+                </span> <b class="caret ms-10px"></b>
             </a>
-            <?php include('header/dropdown-profile.php'); ?>
+            <?php //include('header/dropdown-profile.php'); ?>
         </div>
     </div>
     <!-- END header-nav -->

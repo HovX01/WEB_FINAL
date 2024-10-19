@@ -10,5 +10,11 @@ $router->post('/session', 'session/store.php')->only('guest');
 $router->get('/logout', 'session/destroy.php')->only('auth');
 
 // admin panel
-$router->get('/admin', 'admin/index.php');
+$router->get('/admin', 'admin/index.php')->only('admin');
 
+$router->get('/admin/product', 'admin/product/index.php')->only('admin');
+$router->get('/admin/product/create', 'admin/product/create.php')->only('admin');
+$router->get('/admin/product/{id}', 'admin/product/show.php')->only('admin');
+
+$router->get('/admin/category', 'admin/category/index.php')->only('admin');
+$router->get('/admin/order', 'admin/order/index.php')->only('admin');

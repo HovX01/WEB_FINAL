@@ -2,6 +2,7 @@
 
 namespace Core\Middleware;
 use Core\App;
+use Core\Database;
 
 class AdminMiddleware
 {
@@ -11,9 +12,7 @@ class AdminMiddleware
             header('location: /');
             exit();
         }
-        $db = App::resolve(Database::class);
-        $user = $db->prepare('SELECT * FROM users WHERE email = ?')->execute([$_SESSION['user']])->fetch();
-        if($user['role'] != 'admin'){
+        if($_SESSION['user']['role'] != 'admin'){
             abort(403);
         }
     }

@@ -57,9 +57,17 @@ class Router
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
-            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+            $pattern = preg_replace('#\{[a-zA-Z_]+\}#', '([a-zA-Z0-9_]+)', $route['uri']);
+            $pattern = "#^" . $pattern . "$#";
+
+            // Check if the URI matches the route pattern
+            if (preg_match($pattern, $uri, $params) && $route['method'] === strtoupper($method)) {
+                // Remove the full match (first element) from the $matches array
+                array_shift($params);
+
                 Middleware::resolve($route['middleware']);
 
+                // Include the controller file and call the appropriate method with parameters
                 return require base_path('Http/controllers/' . $route['controller']);
             }
         }

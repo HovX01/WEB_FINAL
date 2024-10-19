@@ -1,10 +1,11 @@
-<?php include('partial/head.php') ?>
+<?php require base_path('views/admin/partial/head.php') ?>
+
 	<!-- BEGIN #app -->
 	<div id="app" class="app app-header-fixed app-sidebar-fixed app-with-light-sidebar">
-        <?php include('partial/header.php'); ?>
-        <?php include('partial/sidebar.php'); ?>
-		
-		<!-- BEGIN #content -->
+        <?php require base_path('views/admin/partial/sidebar.php') ?>
+        <?php require base_path('views/admin/partial/header.php') ?>
+
+        <!-- BEGIN #content -->
 		<div id="content" class="app-content">
 			<!-- BEGIN breadcrumb -->
 			<ol class="breadcrumb float-xl-end">
@@ -36,8 +37,8 @@
 		</div>
 		<!-- END #content -->
 
-        <?php include('partial/scroll-top-btn.php'); ?>
+        <?php require base_path('views/admin/partial/scroll-top-btn.php') ?>
 	</div>
 	<!-- END #app -->
-	
-<?php include('partial/script.php') ?>
+
+<?php require base_path('views/admin/partial/script.php') ?>

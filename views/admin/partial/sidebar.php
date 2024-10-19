@@ -14,71 +14,18 @@
                     <div class="menu-profile-info">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
-                                John Smith
+                                <?php echo $_SESSION['user']['username'] ?? ''; ?>
                             </div>
-                            <div class="menu-caret ms-auto"></div>
                         </div>
-                        <small>Front end developer</small>
+                        <small>
+                            <?php echo $_SESSION['user']['role'] ?? ''; ?>
+                        </small>
                     </div>
                 </a>
             </div>
-            <div id="appSidebarProfileMenu" class="collapse">
-                <div class="menu-item pt-5px">
-                    <a href="javascript:;" class="menu-link">
-                        <div class="menu-icon">
-                            <?php
-                            $icon ??= '';
-                            if ($icon == 'ionicons') {
-                                echo '<ion-icon name="settings-outline"></ion-icon>';
-                            } else if ($icon == 'lineicons') {
-                                echo '<i class="icon-settings"></i>';
-                            } else {
-                                echo '<i class="fa fa-cog"></i>';
-                            }
-                            ?>
-                        </div>
-                        <div class="menu-text">Settings</div>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a href="javascript:;" class="menu-link">
-                        <div class="menu-icon">
-                            <?php
-                            $icon ??= '';
-                            if ($icon == 'ionicons') {
-                                echo '<ion-icon name="paper-plane-outline"></ion-icon>';
-                            } else if ($icon == 'lineicons') {
-                                echo '<i class="icon-pencil"></i>';
-                            } else {
-                                echo '<i class="fa fa-pencil-alt"></i>';
-                            }
-                            ?>
-                        </div>
-                        <div class="menu-text"> Send Feedback</div>
-                    </a>
-                </div>
-                <div class="menu-item pb-5px">
-                    <a href="javascript:;" class="menu-link">
-                        <div class="menu-icon">
-                            <?php
-                            $icon ??= '';
-                            if ($icon == 'ionicons') {
-                                echo '<ion-icon name="help-circle-outline"></ion-icon>';
-                            } else if ($icon == 'lineicons') {
-                                echo '<i class="icon-question"></i>';
-                            } else {
-                                echo '<i class="fa fa-question-circle"></i>';
-                            }
-                            ?>
-                        </div>
-                        <div class="menu-text"> Helps</div>
-                    </a>
-                </div>
-                <div class="menu-divider m-0"></div>
-            </div>
             <div class="menu-header">Navigation</div>
             <div class="menu-item">
-                <a href="/admin" class="menu-link">
+                <a href="/" class="menu-link">
                     <div class="menu-icon">
                         <?php
                         $icon ??= '';
@@ -94,7 +41,39 @@
                     <div class="menu-text">Home</div>
                 </a>
             </div>
+            <div class="menu-item <?= $dashboardClass ?? '' ?>">
+                <a href="/admin" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-tachometer-alt"></i>
+                    </div>
+                    <div class="menu-text">Dashboard</div>
+                </a>
+            </div>
+            <div class="menu-item <?= $productClass ?? '' ?>">
+                <a href="/admin/product" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-store"></i>
+                    </div>
+                    <div class="menu-text">Product</div>
+                </a>
+            </div>
 
+            <div class="menu-item <?= $categoryClass ?? '' ?>">
+                <a href="/admin/category" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-tag"></i>
+                    </div>
+                    <div class="menu-text">Category</div>
+                </a>
+            </div>
+            <div class="menu-item <?= $orderClass ?? '' ?>">
+                <a href="/admin/order" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="menu-text">Order</div>
+                </a>
+            </div>
             <div class="menu-item has-sub">
                 <a href="javascript:;" class="menu-link">
                     <div class="menu-icon">
