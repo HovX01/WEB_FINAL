@@ -4,6 +4,7 @@ namespace Database\Migrations;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 
 class CreateProductTableSeeder {
     public function up() {
@@ -14,9 +15,10 @@ class CreateProductTableSeeder {
             $table->string('description')->nullable();
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->boolean('available')->default(true);
-            $table->float('price')->default(0);
+            $table->decimal('price', 10, 2);
             $table->string('image')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable()->default(Carbon::now());
+            $table->timestamp('updated_at')->nullable()->default(Carbon::now());
         });
     }
 

@@ -10,8 +10,7 @@ class AdminMiddleware
     public function handle()
     {
         if (! $_SESSION['user'] ?? false) {
-            header('location: /');
-            exit();
+            redirect('/login');
         }
         if($_SESSION['user']['role'] != 'admin'){
             abort(403);
