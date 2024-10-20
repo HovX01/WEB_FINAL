@@ -8,9 +8,16 @@ $(() => {
                 product_id: productId
             },
             success: function (response) {
-                console.log(response);
                 const productCount = +$('#cart-count').text();
                 $('#cart-count').text(productCount + 1);
+            },
+            error: function (xhr) {
+                if (xhr.status === 302) {
+                    var redirectUrl = xhr.responseJSON?.url;
+                    if (redirectUrl) {
+                        window.location.href = redirectUrl; // Redirect on 302 status
+                    }
+                }
             }
         })
     });

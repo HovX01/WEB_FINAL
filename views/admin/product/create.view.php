@@ -135,11 +135,11 @@ $errors = session('errors', []);
                     </div>
                     <div class="card-body">
                         <div id="dropzone">
-                            <form action="/upload" class="dropzone needsclick" id="demo-upload">
+                            <div action="/file/upload" class="dropzone needsclick" id="fileUploader">
                                 <div class="dz-message needsclick">
                                     Drop files <b>here</b> or <b>click</b> to upload.<br/>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,11 +174,11 @@ $errors = session('errors', []);
 $script = [
     "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js",
     "/admin-asset/plugins/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.min.js",
-    "/admin-asset/plugins/dropzone/dist/min/dropzone.min.js",
     "/admin-asset/plugins/jquery-migrate/dist/jquery-migrate.min.js",
     "/admin-asset/plugins/tag-it/js/tag-it.min.js",
     "/admin-asset/js/demo/product-details.demo.js",
     '/admin-asset/plugins/select2/dist/js/select2.min.js',
+    "/admin-asset/plugins/dropzone/dist/min/dropzone.min.js",
     '/admin-asset/js/dropzone.js'
 ];
 require base_path('views/admin/partial/script.php')
