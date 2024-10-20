@@ -13,10 +13,6 @@ const BASE_PATH = __DIR__.'/';
 
 require BASE_PATH . 'bootstrap.php';
 
-$config = require base_path('config.php');
-
-$capsule = new Capsule;
-
 $migrations = [
     CreateTableSeeder::class,
     CreateCategoryTableSeeder::class,
