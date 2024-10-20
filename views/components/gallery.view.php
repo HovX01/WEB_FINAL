@@ -38,10 +38,20 @@
           }
         }
       </script>
-      <div class="swiper-wrapper align-items-center">
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/'.$gallery.'"><img src="assets/img/gallery/'.$gallery.'" class="img-fluid" alt=""></a></div>
-      </div>
-      <div class="swiper-pagination"></div>
+        <?php
+            $dir = getcwd();
+            $galleries = mapFolder($dir.'/gallery')['items'];
+        ?>
+        <div class="swiper-wrapper align-items-center">
+            <?php
+            foreach($galleries ?? [] as $gallery){
+                echo '
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="gallery/'.$gallery.'"><img src="gallery/'.$gallery.'" class="img-fluid" alt=""></a></div>
+            ';
+            }
+            ?>
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
 
   </div>
