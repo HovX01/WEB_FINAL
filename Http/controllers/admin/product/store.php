@@ -14,7 +14,7 @@ $db->query("INSERT INTO products (title, slug, description, category_id, availab
     'category_id' => $form->attributes['category_id'],
     'available' => $form->attributes['available'],
     'price' => $form->attributes['price'],
-    'image' => $form->attributes['image'] ?? null
+    'image' => $form->attributes['attachment'] ?? null
 ]);
 
 redirect('/admin/product');

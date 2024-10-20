@@ -22,7 +22,7 @@ $db->query("UPDATE products SET title = :title, slug = :slug, description = :des
     'category_id' => $form->attributes['category_id'],
     'available' => $form->attributes['available'],
     'price' => $form->attributes['price'],
-    'image' => $form->attributes['image'] ?? null,
+    'image' => $form->attributes['attachment'] ?? null,
 ]);
 
 redirect('/admin/product');
