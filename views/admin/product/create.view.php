@@ -76,18 +76,21 @@ $errors = session('errors', []);
                         </div>
                         <div class="row mb-3">
                             <div class="col-lg-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label" for="category">Category</label>
+                                <div class="form-group mb-3 <?php if (isset($errors['category_id'])) : ?>text-danger<?php endif; ?>">
+                                    <label class="form-label" for="category" >Category</label>
                                     <select
                                             id="category"
-                                            class="default-select2 form-control"
+                                            class="default-select2 form-control <?php if (isset($errors['category_id'])) : ?>is-invalid<?php endif; ?>"
                                             name="category_id"
                                     >
-                                        <option >Select Category</option>
+                                        <option value="">Select Category</option>
                                         <?php foreach ($categories ?? [] as $category): ?>
                                             <option value="<?= $category['id'] ?>" <?php if (old('category_id', null) == $category['id']) echo 'selected' ?> ><?= $category['title'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
+                                    <?php if (isset($errors['category_id'])) : ?>
+                                        <div class="invalid-feedback"><?= $errors['category_id'] ?></div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="col-lg-6">
