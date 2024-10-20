@@ -14,6 +14,9 @@ if ($isMinus) {
     } else {
         $session[$productId]--;
     }
+    if($session[$productId] == 0){
+        unset($session[$productId]);
+    }
     Session::put('cart', $session);
 }
 if ($isPlus) {
@@ -26,7 +29,11 @@ if ($isPlus) {
     Session::put('cart', $session);
 }
 if(!$isMinus && !$isPlus){
-    $session[$productId] = $qty;
+    if($qty == 0){
+        unset($session[$productId]);
+    }else{
+        $session[$productId] = $qty;
+    }
     Session::put('cart', $session);
 }
 

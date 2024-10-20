@@ -99,10 +99,10 @@
                 </div>
                 <!-- END checkout-body -->
                 <!-- BEGIN checkout-footer -->
-                <div class="checkout-footer d-flex">
-                    <a href="#" class="btn btn-white btn-lg me-auto btn-theme w-250px">CONTINUE SHOPPING</a>
+                <form action="/checkout" method="post" class="checkout-footer d-flex">
+                    <a href="/" class="btn btn-white btn-lg me-auto btn-theme w-250px">CONTINUE SHOPPING</a>
                     <button type="submit" class="btn btn-dark btn-lg btn-theme w-250px">CHECKOUT</button>
-                </div>
+                </form>
                 <!-- END checkout-footer -->
             </div>
         </div>

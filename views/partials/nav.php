@@ -11,18 +11,18 @@
         <!-- NavBar-->
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home<br></a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/" class="active">Home<br></a></li>
+                <li><a href="/#menu">Menu</a></li>
+                <li><a href="/#gallery">Gallery</a></li>
                 <li><a href="/checkout">Cart
                     <?php
+                        $allProductCount = 0;
                         if(isset($_SESSION['cart']) && $_SESSION['cart']){
-                            $allProductCount = 0;
                             foreach($_SESSION['cart'] as $productId => $productCount){
                                 $allProductCount += $productCount;
                             }
-                            echo '<span id="cart-count" class="badge bg-danger rounded-pill ms-auto pb-4px">'.$allProductCount.'</span>';
                         }
+                    echo '<span id="cart-count" class="badge bg-danger rounded-pill ms-auto pb-4px">'.$allProductCount.'</span>';
                     ?>
                     </a></li>
                 <?php

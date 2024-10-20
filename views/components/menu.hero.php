@@ -34,7 +34,7 @@
             <?php
                 $sql = 'SELECT * FROM products WHERE category_id = :category_id';
                 $stmt = $db->query($sql, [
-                    'category_id' => $key
+                    'category_id' => $category['id']
                 ]);
                 $products = $stmt->get();
             ?>
@@ -46,7 +46,7 @@
                     </a>
                     <h4><?php echo $product['title'] ?></h4>
                     <button type="button" class="btn btn-outline-primary price checkout-post" data-product-id="<?php echo $product['id'] ?>">
-                        <?php echo $product['price'] ?>$
+                        <i class="fa-solid fa-cart-shopping"></i><?php echo $product['price'] ?>$
                     </button>
                 </div>
             <?php endforeach; ?>
