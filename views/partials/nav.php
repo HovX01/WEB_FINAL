@@ -13,6 +13,9 @@
             <ul>
                 <li><a href="/" <?php if ($_SERVER['REQUEST_URI'] == '/') echo 'class="active"'; ?>>Home</a></li>
                 <li><a href="/#menu" <?php if ($_SERVER['REQUEST_URI'] == '/#menu') echo 'class="active"'; ?>>Menu</a></li>
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin'): ?>
+                    <li><a href="/admin">Admin</a></li>
+                <?php endif; ?>
                 <li>
                     <a href="/checkout" <?php if ($_SERVER['REQUEST_URI'] == '/checkout') echo 'class="active"'; ?>>Cart
                         <?php
