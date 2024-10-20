@@ -34,7 +34,7 @@
             <?php
                 $sql = 'SELECT * FROM products WHERE category_id = :category_id';
                 $stmt = $db->query($sql, [
-                    'category_id' => $key
+                    'category_id' => $category['id']
                 ]);
                 $products = $stmt->get();
             ?>

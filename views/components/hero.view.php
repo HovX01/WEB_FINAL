@@ -7,7 +7,7 @@
         <p data-aos="fade-up" data-aos-delay="100">Discover furniture that reflects your style</p>
       </div>
       <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-        <img src="../../assets/img/furniture/hero.avif" class="img-fluid animated" alt="">
+        <img src="/furniture/hero.avif" class="img-fluid animated" alt="">
       </div>
     </div>
   </div>
