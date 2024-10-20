@@ -23,31 +23,6 @@ if (!$user) {
 }
 
 // seed products
-function mapFolder($dir): ?array
-{
-    $results = [];
-
-    // Validate directory existence and readability
-    if (!is_dir($dir) || !is_readable($dir)) {
-        return null; // Handle error or throw exception
-    }
-
-    $scanned = scandir($dir);
-    unset($scanned[array_search('.', $scanned, true)]);
-    unset($scanned[array_search('..', $scanned, true)]);
-
-    foreach ($scanned as $item) {
-        $fullPath = realpath($dir . DIRECTORY_SEPARATOR . $item); // Get full path for clarity
-
-        if (is_dir($fullPath)) {
-            $results['folders'][$item] = mapFolder($fullPath); // Recursively map subfolders
-        } else {
-            $results['items'][] = $item; // Add items to the 'items' array
-        }
-    }
-
-    return $results;
-}
 
 $items = mapFolder(base_path('/public/furniture/items'))['folders'];
 //$galleries = mapFolder(base_path('/public/gallery'))['items'];
