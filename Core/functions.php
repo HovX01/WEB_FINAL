@@ -102,5 +102,5 @@ function str_slug($text, $separator = '-')
 function get_avatar_by_user_id($user_id)
 {
     $avatarId = $user_id % 13 + 1;
-    return "/admin-asset/img/user/user-${avatarId}.jpg";
+    return "/admin-asset/img/user/user-$avatarId.jpg";
 }
