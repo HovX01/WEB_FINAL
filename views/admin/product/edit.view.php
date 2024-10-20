@@ -136,11 +136,11 @@ $errors = session('errors', []);
                     </div>
                     <div class="card-body">
                         <div id="dropzone">
-                            <form action="/upload" class="dropzone needsclick" id="demo-upload">
+                            <div action="/upload" class="dropzone needsclick" id="demo-upload">
                                 <div class="dz-message needsclick">
                                     Drop files <b>here</b> or <b>click</b> to upload.<br/>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
