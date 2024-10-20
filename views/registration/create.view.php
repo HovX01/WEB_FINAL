@@ -12,7 +12,7 @@ require base_path('views/partials/head.php');
     <div class="register register-with-news-feed">
         <!-- BEGIN news-feed -->
         <div class="news-feed">
-            <div class="news-image" style="background-image: url(../assets/img/login-bg/login-bg-15.jpg)"></div>
+            <div class="news-image" style="background-image: url(/admin-asset/img/login-bg/login-bg-15.jpg)"></div>
             <div class="news-caption">
                 <h4 class="caption-title">Furniture</h4>
             </div>
