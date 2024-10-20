@@ -11,9 +11,9 @@
         <!-- NavBar-->
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home<br></a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/" class="active">Home<br></a></li>
+                <li><a href="/#menu">Menu</a></li>
+                <li><a href="/#gallery">Gallery</a></li>
                 <li><a href="/checkout">Cart
                     <?php
                         $allProductCount = 0;
