@@ -1,6 +1,10 @@
 <?php
     use Core\App;
     use Core\Database;
+    if(!(isset($_SESSION['cart']) && $_SESSION['cart'])){
+        header('location: /');
+        exit;
+    }
     $db = App::resolve(Database::class);
     $productIds = array_keys($_SESSION['cart']);
     $products = count($productIds) > 0 ? $db->query('SELECT * FROM products WHERE id IN ('.implode(',', $productIds).')')->get() : [];
