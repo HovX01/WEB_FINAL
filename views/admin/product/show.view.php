@@ -139,16 +139,19 @@ $errors = session('errors', []);
                 </div>
                 <div class="card border-0 mb-4">
                     <div class="card-header h6 mb-0 bg-none p-3">
-                        <i class="fa fa-file-image fa-lg fa-fw text-dark text-opacity-50 me-1"></i>
+                        <i class="fa fa-file-image fa-lg fa-fw @@if(context.theme != 'transparent'){text-dark}@@if(context.theme == 'transparent'){text-white} text-opacity-50 me-1"></i>
                         Image
                     </div>
                     <div class="card-body">
                         <div id="dropzone">
-                            <form action="/upload" class="dropzone needsclick" id="demo-upload">
+                            <div action="/file/upload" class="dropzone needsclick" id="fileUploader" disabled="">
                                 <div class="dz-message needsclick">
                                     Drop files <b>here</b> or <b>click</b> to upload.<br/>
                                 </div>
-                            </form>
+                            </div>
+                            <?php if($product['image'] != null): ?>
+                                <input type="hidden" name="attachment" value="<?= $product['image'] ?>" disabled>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
