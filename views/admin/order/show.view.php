@@ -55,8 +55,6 @@ $errors = session('errors', []);
                             <a href="/admin/product?order=<?= $order['id'] ?>" class="btn btn-primary ms-auto">View All Products</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4">
                     <div class="card border-0 mb-4">
                         <div class="card-header bg-none p-3 h6 m-0 d-flex align-items-center">
                             <i class="fa fa-credit-card fa-lg me-2 text-gray text-opacity-50"></i>
@@ -124,6 +122,8 @@ $errors = session('errors', []);
                             <?php endif; ?>
                         </div>
                     </div>
+                </div>
+                <div class="col-xl-4">
                     <div class="card border-0 mb-4">
                         <div class="card-header bg-none p-3 h6 m-0 d-flex align-items-center">
                             Notes
