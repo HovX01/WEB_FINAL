@@ -42,7 +42,7 @@ $dashboardClass = 'active';
                                 <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
                                 <div class="stats-content">
                                     <div class="stats-title">TOTAL REVENUE</div>
-                                    <div class="stats-number">$<span data-animation="number" data-value="<?= number_format($totalRevenue) ?>">0.00</span></div>
+                                    <div class="stats-number">$<span data-animation="number" data-value="<?= $totalRevenue ?>">0.00</span></div>
                                     <div class="stats-progress progress">
                                         <div class="progress-bar" style="width: 40.5%;"></div>
                                     </div>
