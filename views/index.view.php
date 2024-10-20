@@ -34,11 +34,6 @@
     ?>
     <!-- /Menu Section -->
 
-    <!-- Gallery Section -->
-    <?php
-    require_once('components/gallery.view.php')
-    ?>
-    <!-- /Gallery Section -->
 
 </main>
 
