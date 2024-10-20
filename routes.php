@@ -35,3 +35,4 @@ $router->post('/admin/category/{id}/delete', 'admin/category/delete.php')->only(
 
 $router->get('/admin/order', 'admin/order/index.php')->only('admin');
 $router->get('/admin/order/{id}', 'admin/order/show.php')->only('admin');
+$router->post('/admin/order/{id}/action', 'admin/order/action.php')->only('admin');

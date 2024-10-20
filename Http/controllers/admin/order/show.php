@@ -2,21 +2,26 @@
 
 use Core\App;
 use Core\Database;
+
 $db = App::resolve(Database::class);
-return view('admin/order/show.view.php');
-$params ??= [];
-$product = $db
-    ->query("SELECT * FROM products where slug = ?", [
-        $params['0']
-    ])->find();
-$categories = $db->query('SELECT * FROM categories')->get();
-$product['category'] = $db->query('SELECT * FROM categories WHERE id = :id', ['id' => $product['category_id']])->find();
 
-if ($product) {
-    return view('admin/product/show.view.php', [
-        'product' => $product,
-        'categories' => $categories
-    ]);
-}
+$id = $params[0] ?? null;
 
-abort();
+$order = $db->query('SELECT * FROM orders WHERE id = ?', [$id])->findOrFail();
+
+$order['products'] = $db->query(
+    '
+        SELECT products.*, product_orders.quantity FROM products 
+        JOIN product_orders ON products.id = product_orders.product_id 
+        WHERE product_orders.order_id = :order_id
+    ',
+    [
+        'order_id' => $order['id']
+    ]
+)->get();
+$order['customer'] = $db->query('SELECT * FROM users WHERE id = :id', ['id' => $order['created_by']])->find();
+
+
+view('admin/order/show.view.php', [
+    'order' => $order
+]);

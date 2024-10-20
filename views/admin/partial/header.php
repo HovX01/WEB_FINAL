@@ -38,7 +38,7 @@
         <div class="navbar-item navbar-user dropdown">
             <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
                 <div class="image image-icon bg-gray-800 text-gray-600">
-                    <i class="fa fa-user"></i>
+                    <img src="<?= get_avatar_by_user_id($user['id'] ?? 1) ?>" class="rounded-circle" style="margin-right: 0;" width="45" height="45"/>
                 </div>
                 <span class="d-none d-md-inline">
                     <?php echo $user['username'] ?? 'Unknown'; ?>

@@ -9,7 +9,7 @@
                    data-target="#appSidebarProfileMenu">
                     <div class="menu-profile-cover with-shadow"></div>
                     <div class="menu-profile-image menu-profile-image-icon bg-gray-900 text-gray-600">
-                        <i class="fa fa-user"></i>
+                        <img src="<?= get_avatar_by_user_id($_SESSION['user']['id'] ?? 1) ?>" class="rounded-circle" width="45" height="45"/>
                     </div>
                     <div class="menu-profile-info">
                         <div class="d-flex align-items-center">

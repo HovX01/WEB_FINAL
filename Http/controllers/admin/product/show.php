@@ -8,15 +8,11 @@ $params ??= [];
 $product = $db
     ->query("SELECT * FROM products where slug = ?", [
         $params['0']
-    ])->find();
+    ])->findOrFail();
 $categories = $db->query('SELECT * FROM categories')->get();
 $product['category'] = $db->query('SELECT * FROM categories WHERE id = :id', ['id' => $product['category_id']])->find();
 
-if ($product) {
-    return view('admin/product/show.view.php', [
-        'product' => $product,
-        'categories' => $categories
-    ]);
-}
-
-abort();
+view('admin/product/show.view.php', [
+    'product' => $product,
+    'categories' => $categories
+]);
