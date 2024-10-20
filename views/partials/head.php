@@ -2,7 +2,7 @@
 <html lang="en" class="h-full bg-gray-100">
 <head>
     <meta charset="UTF-8">
-    <title>Demo</title>
+    <title>Furniture Store</title>
     <?php
         require_once('style.php')
     ?>

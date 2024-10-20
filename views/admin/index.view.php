@@ -159,11 +159,11 @@ $dashboardClass = 'active';
                                     <!-- END title -->
                                     <!-- BEGIN sales -->
                                     <h3 class="mb-10px">
-                                        <a class="text-white text-decoration-none" href="/admin/product?category=<?= $topCategoriesByRevenue[0]['id'] ?>"><?= $topCategoriesByRevenue[0]['title'] ?></a>
+                                        <a class="text-white text-decoration-none" href="/admin/product?category=<?= $topCategoriesByRevenue[0]['id'] ?? 0 ?>"><?= $topCategoriesByRevenue[0]['title'] ?? 0 ?></a>
                                     </h3>
                                     <!-- END sales -->
                                     <!-- BEGIN percentage -->
-                                    <div class="text-gray-500 mb-1px">$<span data-animation="number" data-value="<?= $topCategoriesByRevenue[0]['revenue'] ?>">0.00</span></div>
+                                    <div class="text-gray-500 mb-1px">$<span data-animation="number" data-value="<?= $topCategoriesByRevenue[0]['revenue'] ?? 0 ?>">0.00</span></div>
                                     <!-- END percentage -->
                                 </div>
                                 <!-- END card-body -->
