@@ -1,38 +1,24 @@
 <?php
 
-use Database\Migrations\{CreateTableSeeder, CreateCategoryTableSeeder, CreateProductTableSeeder};
-use Illuminate\Container\Container;
+use Database\Migrations\{
+    CreateTableSeeder,
+    CreateCategoryTableSeeder,
+    CreateProductTableSeeder,
+    CreateOrderTableSeeder,
+    CreateProductOrderTableSeeder
+};
 use Illuminate\Database\Capsule\Manager as Capsule;
-use Illuminate\Events\Dispatcher;
 
-require 'vendor/autoload.php';
+const BASE_PATH = __DIR__.'/';
 
-const BASE_PATH = __DIR__ . '/';
-require BASE_PATH . 'Core/functions.php';
 require BASE_PATH . 'bootstrap.php';
 
-$config = require base_path('config.php');
-
-$capsule = new Capsule;
-
-$capsule->addConnection([
-    ...$config['database'],
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
-    'database' => $config['database']['dbname']
-]);
-
-$capsule->setEventDispatcher(new Dispatcher(new Container));
-
-// Make this Capsule instance available globally via static methods
-$capsule->setAsGlobal();
-
-// Boot Eloquent ORM
-$capsule->bootEloquent();
 $migrations = [
     CreateTableSeeder::class,
     CreateCategoryTableSeeder::class,
     CreateProductTableSeeder::class,
+    CreateOrderTableSeeder::class,
+    CreateProductOrderTableSeeder::class,
 ];
 $batch = Capsule::table('migrations')->max('batch') ?? 0;
 $batch++;

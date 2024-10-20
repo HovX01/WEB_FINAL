@@ -54,6 +54,9 @@ class Router
         return $this;
     }
 
+    /**
+     * @throws ValidationException|\Exception
+     */
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
