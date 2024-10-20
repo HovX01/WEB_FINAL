@@ -136,11 +136,14 @@ $errors = session('errors', []);
                     </div>
                     <div class="card-body">
                         <div id="dropzone">
-                            <div action="/upload" class="dropzone needsclick" id="demo-upload">
+                            <div action="/file/upload" class="dropzone needsclick" id="fileUploader">
                                 <div class="dz-message needsclick">
                                     Drop files <b>here</b> or <b>click</b> to upload.<br/>
                                 </div>
                             </div>
+                            <?php if($product['image'] != null): ?>
+                            <input type="hidden" name="attachment" value="<?= $product['image'] ?>">
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
