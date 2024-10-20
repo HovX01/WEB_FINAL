@@ -84,7 +84,7 @@ $errors = session('errors', []);
                                             class="default-select2 form-control"
                                             name="category_id"
                                     >
-                                        <option >Select Category</option>
+                                        <option value="">Select Category</option>
                                         <?php foreach ($categories ?? [] as $category): ?>
                                             <option value="<?= $category['id'] ?>" <?php if (old('category_id', $product['category_id']) == $category['id']) echo 'selected' ?> ><?= $category['title'] ?></option>
                                         <?php endforeach; ?>

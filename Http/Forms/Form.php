@@ -34,6 +34,9 @@ abstract class Form
         return $instance->failed() ? $instance->throw() : $instance;
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function throw()
     {
         ValidationException::throw($this->errors(), $this->attributes);
