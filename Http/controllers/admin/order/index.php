@@ -1,7 +1,7 @@
 <?php
 
 $db = app(\Core\Database::class);
-$orders = $db->query('SELECT * FROM orders ORDER BY created_at DESC')->get();
+$orders = $db->query('SELECT * FROM orders ORDER BY id DESC')->get();
 $orders = array_map(function ($order) use ($db) {
     $order['products'] = $db->query('SELECT * FROM products WHERE id IN (SELECT product_id FROM product_orders WHERE order_id = :order_id)', [
         'order_id' => $order['id']
