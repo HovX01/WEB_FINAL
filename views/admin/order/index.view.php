@@ -103,7 +103,8 @@ $orderClass = 'active';
             document.addEventListener('DOMContentLoaded', function () {
                 $('#data-table').DataTable({
                     autoWidth: false,
-                    responsive: true
+                    responsive: true,
+                    ordering: false
                 });
             });
         </script>
