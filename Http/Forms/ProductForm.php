@@ -27,5 +27,14 @@ class ProductForm extends Form
         ])->get()) {
             $this->errors['slug'] = 'A slug must be unique.';
         }
+
+        if (Validator::required($attributes['available'])) {
+            $this->attributes['available'] = false;
+        }
+
+        if ($attributes['category_id'] === '') {
+            $this->attributes['category_id'] = null;
+        }
+
     }
 }
