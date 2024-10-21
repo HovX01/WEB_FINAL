@@ -58,7 +58,7 @@ $categories = $stmt->get();
                     ]);
                     $products = $stmt->get();
                     ?>
-                    <div class="row gy-5">
+                    <div class="row gy-5" style="place-content: center;">
                         <?php foreach ($products as $product): ?>
                             <div class="col-lg-4 menu-item">
                                 <a href="<?php echo $product['image'] ?>" class="glightbox">
