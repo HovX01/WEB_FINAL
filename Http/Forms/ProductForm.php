@@ -32,6 +32,8 @@ class ProductForm extends Form
             $this->attributes['available'] = false;
         }
 
+        $this->attributes['available'] = (bool) $this->attributes['available'];
+
         if ($attributes['category_id'] === '') {
             $this->attributes['category_id'] = null;
         }
