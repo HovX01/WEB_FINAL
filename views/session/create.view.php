@@ -23,7 +23,7 @@ require base_path('views/partials/head.php') ;
         <div class="register-container">
             <!-- BEGIN register-header -->
             <div class="register-header mb-25px h1">
-                <div class="mb-1">Sign Up</div>
+                <div class="mb-1">Log in</div>
             </div>
             <!-- END register-header -->
 
