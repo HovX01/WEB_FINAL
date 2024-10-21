@@ -12,7 +12,7 @@ if (move_uploaded_file($_FILES['file']['tmp_name'], $targetPath)) {
       'error' => '',
       'success' => true,
       'message' => 'File uploaded successfully',
-      'url' => $targetPath
+      'url' => '/'.$targetPath
     ]);
 } else {
     echo json_encode([
