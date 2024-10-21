@@ -12,7 +12,7 @@ $db->query("INSERT INTO products (title, slug, description, category_id, availab
     'slug' => $form->attributes['slug'],
     'description' => $form->attributes['description'],
     'category_id' => $form->attributes['category_id'],
-    'available' => $form->attributes['available'],
+    'available' => (bool)$form->attributes['available'],
     'price' => $form->attributes['price'],
     'image' => $form->attributes['attachment'] ?? null
 ]);
