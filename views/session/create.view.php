@@ -12,9 +12,9 @@ require base_path('views/partials/head.php') ;
     <div class="register register-with-news-feed">
         <!-- BEGIN news-feed -->
         <div class="news-feed">
-            <div class="news-image" style="background-image: url(/admin-asset/img/login-bg/login-bg-15.jpg)"></div>
+            <div class="news-image" style="background-image: url('/admin-asset/img/login-bg/login-bg-13.jpg')"></div>
             <div class="news-caption">
-                <h4 class="caption-title">Furniture</h4>
+                <h4 class="caption-title">Pet Shop</h4>
             </div>
         </div>
         <!-- END news-feed -->
@@ -23,7 +23,7 @@ require base_path('views/partials/head.php') ;
         <div class="register-container">
             <!-- BEGIN register-header -->
             <div class="register-header mb-25px h1">
-                <div class="mb-1">Sign Up</div>
+                <div class="mb-1">Login</div>
             </div>
             <!-- END register-header -->
 

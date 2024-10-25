@@ -1,11 +1,37 @@
 <?php require('partials/head.php') ?>
-<?php require('partials/nav.php') ?>
-<?php require('partials/banner.php') ?>
 
-<main>
-    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <p>Hello. Welcome to the about page.</p>
-    </div>
-</main>
+    <!-- Topbar Start -->
+    <?php
+      require_once('partials/header_group/topbar.php');
+    ?>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <!-- Topbar End -->
+    <?php
+      require_once('partials/header_group/top_shop.php');
+    ?>
+    <!-- top_shop end-->
+    <!-- Navbar End -->
+
+    <?php
+      require_once('partials/header_group/about.php');
+    ?>
+    <!-- About End -->
+
+
+    <!-- Offer Start -->
+    <?php
+      require_once('partials/header_group/offer.php');
+    ?>
+    <!-- Offer End -->
+
+<!-- Team Start -->
+    <?php
+      require_once('partials/header_group/team_member.php');
+    ?>
+    <!-- Team End -->
+
 
 <?php require('partials/footer.php') ?>

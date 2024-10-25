@@ -4,7 +4,7 @@
 <div id="header" class="app-header">
     <!-- BEGIN navbar-header -->
     <div class="navbar-header">
-        <a href="/admin" class="navbar-brand"><span class="navbar-logo"></span> <b>Furniture</b>&nbsp; Admin</a>
+        <a href="/admin" class="navbar-brand"><span class="navbar-logo"></span> <b>Pet Shop</b>&nbsp; Admin</a>
         <button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

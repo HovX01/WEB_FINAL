@@ -1,23 +1,10 @@
 <?php
 echo <<< ELO
-    <!-- Vendor JS Files -->
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/vendor/php-email-form/validate.js"></script>
-    <script src="/vendor/aos/aos.js"></script>
-    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-    
-    <script src="/js/app.min.js"></script>
-    <script src="/js/vendor.min.js"></script>
-    
-    <script src="/js/e-commerce/app.min.js"></script>
-    <script src="/js/e-commerce/vendor.min.js"></script>
-    <script src="/js/e-commerce/function.js"></script>
-    
     <!-- Main JS File -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="/js/main.js"></script>
-    
-    <script src="/vendor/parsleyjs/parsley.min.js"></script>
-    <script src="/vendor/@highlightjs/cdn-assets/highlight.min.js"></script>
 ELO;

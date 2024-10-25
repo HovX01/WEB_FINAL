@@ -1,20 +1,19 @@
-<!-- Favicons -->
-<link href="/img/favicon.png" rel="icon">
-<link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap"
-      rel="stylesheet">
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">
 
-<!-- Vendor CSS Files -->
-<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="/vendor/aos/aos.css" rel="stylesheet">
-<link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-<!--<link href="/css/e-commerce/vendor.min.css" rel="stylesheet">-->
-<!--<link href="/css/vendor.min.css" rel="stylesheet">-->
-<link href="/admin-asset/plugins/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
-<!-- Main CSS File -->
+<!-- Icon Font Stylesheet -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet">

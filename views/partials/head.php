@@ -1,8 +1,12 @@
-<!doctype html>
-<html lang="en" class="h-full bg-gray-100">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Furniture Store</title>
+    <meta charset="utf-8">
+    <title>PET-SHOP</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
     <?php
         require_once('style.php')
     ?>

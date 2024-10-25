@@ -1,46 +1,53 @@
-<?php
-    $style = [
-      "/css/app.min.css",
-      "/css/main.css"
-    ];
-?>
 <?php require('partials/head.php') ?>
-<?php require('partials/nav.php') ?>
 
-<!--<main>-->
-<!--    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">-->
-<!--        <p>Hello, --><?php //= $_SESSION['user']['email'] ?? 'Guest' ?><!--. Welcome to the home page.</p>-->
-<!--    </div>-->
-<!--</main>-->
-<!--END Header-->
-<main class="main">
-
-    <!-- Hero Section -->
-    <?php
-    require_once ('components/hero.view.php')
-    ?>
-    <!-- /Hero Section -->
+<!-- Topbar Start -->
+<?php
+require_once('partials/header_group/topbar.php');
+?>
+<!-- Topbar End -->
+<?php
+require_once('partials/header_group/top_shop.php');
+?>
+<!-- top_shop end-->
 
 
-    <!-- Stats Section -->
-    <?php
-    require_once ('components/stats.view.php')
-    ?>
-    <!-- /Stats Section -->
+<!-- Cover_Pages Start -->
+<?php
+require_once('partials/header_group/cover_pages.php');
+?>
+<!-- Cover_Pages End -->
 
-    <!-- Menu Section -->
-    <?php
-    require_once ('components/menu.hero.php')
-    ?>
-    <!-- /Menu Section -->
 
-</main>
+<!-- About Start -->
+<?php
+require_once('partials/header_group/about.php');
+?>
+<!-- About End -->
 
-<!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Preloader -->
-<div id="preloader"></div>
+<!-- Services Start -->
+<?php
+require_once('partials/header_group/services.php');
+?>
+<!-- Serviver End-->
 
+<!-- pets and feeds start -->
+<?php
+require_once('partials/header_group/pets&feeds.php');
+?>
+<!-- pets and feeds start -->
+
+
+<!-- Offer Start -->
+<?php
+require_once('partials/header_group/offer.php');
+?>
+<!-- Offer End -->
+
+<!-- Team Start -->
+<?php
+require_once('partials/header_group/team_member.php');
+?>
+<!-- Team End -->
 
 <?php require('partials/footer.php') ?>

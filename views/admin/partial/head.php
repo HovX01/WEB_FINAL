@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/admin-asset/css/vendor.min.css">
     <style>
         :root {
-            --bs-body-font-size: 0.875rem;
+            --bs-body-font-size: 1.2rem;
         }
     </style>
     <?php

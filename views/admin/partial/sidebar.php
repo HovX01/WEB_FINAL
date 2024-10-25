@@ -24,56 +24,40 @@
                 </a>
             </div>
             <div class="menu-header">Navigation</div>
-            <div class="menu-item">
-                <a href="/" class="menu-link">
-                    <div class="menu-icon">
-                        <?php
-                        $icon ??= '';
-                        if ($icon == 'ionicons') {
-                            echo '<ion-icon name="tv-outline"></ion-icon>';
-                        } else if ($icon == 'lineicons') {
-                            echo '<i class="icon-screen-desktop"></i>';
-                        } else {
-                            echo '<i class="fa fa-sitemap"></i>';
-                        }
-                        ?>
-                    </div>
-                    <div class="menu-text">Home</div>
-                </a>
-            </div>
             <div class="menu-item <?= $dashboardClass ?? '' ?>">
                 <a href="/admin" class="menu-link">
                     <div class="menu-icon">
                         <i class="fa fa-tachometer-alt"></i>
                     </div>
-                    <div class="menu-text">Dashboard</div>
+                    <div class="menu-text">Home</div>
                 </a>
             </div>
+
             <div class="menu-item <?= $productClass ?? '' ?>">
-                <a href="/admin/product" class="menu-link">
+                <a href="/admin/pet" class="menu-link">
                     <div class="menu-icon">
-                        <i class="fa fa-store"></i>
+                        <i class="fa fa-paw"></i>
                     </div>
-                    <div class="menu-text">Product</div>
+                    <div class="menu-text">Pet</div>
                 </a>
             </div>
 
             <div class="menu-item <?= $categoryClass ?? '' ?>">
-                <a href="/admin/category" class="menu-link">
+                <a href="/admin/food" class="menu-link">
                     <div class="menu-icon">
-                        <i class="fa fa-tag"></i>
+                        <i class="fa fa-tooth"></i>
                     </div>
-                    <div class="menu-text">Category</div>
+                    <div class="menu-text">Food</div>
                 </a>
             </div>
-            <div class="menu-item <?= $orderClass ?? '' ?>">
-                <a href="/admin/order" class="menu-link">
-                    <div class="menu-icon">
-                        <i class="fa fa-shopping-cart"></i>
-                    </div>
-                    <div class="menu-text">Order</div>
-                </a>
-            </div>
+<!--            <div class="menu-item --><?php //= $orderClass ?? '' ?><!--">-->
+<!--                <a href="/admin/order" class="menu-link">-->
+<!--                    <div class="menu-icon">-->
+<!--                        <i class="fa fa-shopping-cart"></i>-->
+<!--                    </div>-->
+<!--                    <div class="menu-text">Order</div>-->
+<!--                </a>-->
+<!--            </div>-->
 <!--            <div class="menu-item has-sub">-->
 <!--                <a href="javascript:;" class="menu-link">-->
 <!--                    <div class="menu-icon">-->

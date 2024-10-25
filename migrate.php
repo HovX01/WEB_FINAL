@@ -2,10 +2,6 @@
 
 use Database\Migrations\{
     CreateTableSeeder,
-    CreateCategoryTableSeeder,
-    CreateProductTableSeeder,
-    CreateOrderTableSeeder,
-    CreateProductOrderTableSeeder
 };
 use Illuminate\Database\Capsule\Manager as Capsule;
 
@@ -14,11 +10,7 @@ const BASE_PATH = __DIR__.'/';
 require BASE_PATH . 'bootstrap.php';
 
 $migrations = [
-    CreateTableSeeder::class,
-    CreateCategoryTableSeeder::class,
-    CreateProductTableSeeder::class,
-    CreateOrderTableSeeder::class,
-    CreateProductOrderTableSeeder::class,
+    CreateTableSeeder::class
 ];
 $batch = Capsule::table('migrations')->max('batch') ?? 0;
 $batch++;
