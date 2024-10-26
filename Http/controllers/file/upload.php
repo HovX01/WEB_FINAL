@@ -1,6 +1,6 @@
 <?php
 
-$targetDirectory = "uploads/";
+$targetDirectory = "img/";
 @mkdir($targetDirectory, 0777, true);
 
 $fileExtension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);

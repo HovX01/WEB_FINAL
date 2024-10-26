@@ -22,21 +22,26 @@ $router->get('/admin', 'admin/index.php')->only('admin');
 
 $router->post('/file/upload', 'file/upload.php')->only('admin');
 
-$router->get('/admin/product', 'admin/product/index.php')->only('admin');
-$router->get('/admin/product/create', 'admin/product/create.php')->only('admin');
-$router->post('/admin/product/store', 'admin/product/store.php')->only('admin');
-$router->get('/admin/product/{slug}', 'admin/product/show.php')->only('admin');
-$router->get('/admin/product/{slug}/edit', 'admin/product/edit.php')->only('admin');
-$router->post('/admin/product/{id}/update', 'admin/product/update.php')->only('admin');
-$router->post('/admin/product/{id}/delete', 'admin/product/delete.php')->only('admin');
+// pets
+$router->get('/admin/pet', 'admin/pet/index.php')->only('admin');
+$router->get('/admin/pet/create', 'admin/pet/create.php')->only('admin');
+$router->post('/admin/pet/store', 'admin/pet/store.php')->only('admin');
+$router->get('/admin/pet/{id}/edit', 'admin/pet/edit.php')->only('admin');
+$router->post('/admin/pet/{id}/update', 'admin/pet/update.php')->only('admin');
+$router->post('/admin/pet/{id}/delete', 'admin/pet/delete.php')->only('admin');
 
-$router->get('/admin/category', 'admin/category/index.php')->only('admin');
-$router->get('/admin/category/create', 'admin/category/create.php')->only('admin');
-$router->post('/admin/category/store', 'admin/category/store.php')->only('admin');
-$router->get('/admin/category/{id}/edit', 'admin/category/edit.php')->only('admin');
-$router->post('/admin/category/{id}/update', 'admin/category/update.php')->only('admin');
-$router->post('/admin/category/{id}/delete', 'admin/category/delete.php')->only('admin');
+// foods
+$router->get('/admin/food', 'admin/food/index.php')->only('admin');
+$router->get('/admin/food/create', 'admin/food/create.php')->only('admin');
+$router->post('/admin/food/store', 'admin/food/store.php')->only('admin');
+$router->get('/admin/food/{id}/edit', 'admin/food/edit.php')->only('admin');
+$router->post('/admin/food/{id}/update', 'admin/food/update.php')->only('admin');
+$router->post('/admin/food/{id}/delete', 'admin/food/delete.php')->only('admin');
 
-$router->get('/admin/order', 'admin/order/index.php')->only('admin');
-$router->get('/admin/order/{id}', 'admin/order/show.php')->only('admin');
-$router->post('/admin/order/{id}/action', 'admin/order/action.php')->only('admin');
+// services
+$router->get('/admin/service', 'admin/service/index.php')->only('admin');
+$router->get('/admin/service/create', 'admin/service/create.php')->only('admin');
+$router->post('/admin/service/store', 'admin/service/store.php')->only('admin');
+$router->get('/admin/service/{id}/edit', 'admin/service/edit.php')->only('admin');
+$router->post('/admin/service/{id}/update', 'admin/service/update.php')->only('admin');
+$router->post('/admin/service/{id}/delete', 'admin/service/delete.php')->only('admin');

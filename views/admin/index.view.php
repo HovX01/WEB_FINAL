@@ -32,45 +32,34 @@ $dashboardClass = 'active';
 					</div>
 				</div>
 				<div class="panel-body">
-                    <!-- BEGIN row -->
+
+<!--                    view('admin/index.view.php', [-->
+<!--                    'serviceCount' => $serviceCount['count'],-->
+<!--                    'petCount' => $petCount['count'],-->
+<!--                    'foodCount' => $foodCount['count'],-->
+<!--                    'teamMembers' => $teamMembers,-->
+<!--                    ]);-->
                     <div class="row gx-2 mb-20px">
-                        <!-- BEGIN col-4 -->
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-6 col-sm-12">
                             <div class="widget widget-stats bg-blue mb-7px">
-                                <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
+                                <div class="stats-icon stats-icon-lg"><i class="fa fa-people-group fa-fw"></i></div>
                                 <div class="stats-content">
-                                    <div class="stats-title">TOTAL REVENUE</div>
-                                    <div class="stats-number">$<span data-animation="number" data-value="<?= $totalRevenue ?>">0.00</span></div>
+                                    <div class="stats-title">TOTAL MEMBERS</div>
+                                    <div class="stats-number"><span data-animation="number" data-value="<?= $teamMembers ?>">0</span></div>
                                     <div class="stats-progress progress">
-                                        <div class="progress-bar" style="width: 40.5%;"></div>
+                                        <div class="progress-bar" style="width: 100%;"></div>
                                     </div>
-                                    <div class="stats-desc">Better than last week (40.5%)</div>
+                                    <div class="stats-desc">Better than last week (100%)</div>
                                 </div>
                             </div>
                         </div>
-                        <!-- END col-4 -->
-                        <!-- BEGIN col-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="widget widget-stats bg-teal mb-7px">
-                                <div class="stats-icon stats-icon-lg"><i class="fa fa-globe fa-fw"></i></div>
-                                <div class="stats-content">
-                                    <div class="stats-title">TOTAL PRODUCTS</div>
-                                    <div class="stats-number"><span data-animation="number" data-value="<?= $productCount ?>">0</span></div>
-                                    <div class="stats-progress progress">
-                                        <div class="progress-bar" style="width: 71.4%;"></div>
-                                    </div>
-                                    <div class="stats-desc">Better than last week (71.4%%)</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END col-4 -->
-                        <!-- BEGIN col-4 -->
-                        <div class="col-lg-4 col-sm-6">
+
+                        <div class="col-lg-6 col-sm-12">
                             <div class="widget widget-stats bg-purple mb-7px">
                                 <div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
                                 <div class="stats-content">
-                                    <div class="stats-title">TOTAL ORDERS</div>
-                                    <div class="stats-number"><span data-animation="number" data-value="<?= $ordersCount ?>">0</span></div>
+                                    <div class="stats-title">TOTAL SERVICES</div>
+                                    <div class="stats-number"><span data-animation="number" data-value="<?= $serviceCount ?>">0</span></div>
                                     <div class="stats-progress progress">
                                         <div class="progress-bar" style="width: 76.3%;"></div>
                                     </div>
@@ -78,52 +67,34 @@ $dashboardClass = 'active';
                                 </div>
                             </div>
                         </div>
-                        <!-- END col-4 -->
-                        <!-- BEGIN col-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="widget widget-stats bg-dark mb-7px">
-                                <div class="stats-icon stats-icon-lg"><i class="fa fa-comment-alt fa-fw"></i></div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="widget widget-stats bg-teal mb-7px">
+                                <div class="stats-icon stats-icon-lg"><i class="fa fa-paw fa-fw"></i></div>
                                 <div class="stats-content">
-                                    <div class="stats-title">PAID ORDERS</div>
-                                    <div class="stats-number"><span data-animation="number" data-value="<?= $paidOrdersCount ?>">0</span></div>
+                                    <div class="stats-title">TOTAL PET PRODUCTS</div>
+                                    <div class="stats-number"><span data-animation="number" data-value="<?= $petCount ?>">0</span></div>
                                     <div class="stats-progress progress">
-                                        <div class="progress-bar" style="width: 54.9%;"></div>
+                                        <div class="progress-bar" style="width: 71.4%;"></div>
                                     </div>
-                                    <div class="stats-desc">Better than last week (54.9%)</div>
+                                    <div class="stats-desc">Better than last week (71.4%)</div>
                                 </div>
                             </div>
                         </div>
-                        <!-- END col-4 -->
-                        <!-- BEGIN col-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="widget widget-stats bg-orange mb-7px">
-                                <div class="stats-icon stats-icon-lg"><i class="fa fa-file-alt fa-fw"></i></div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="widget widget-stats bg-teal mb-7px">
+                                <div class="stats-icon stats-icon-lg"><i class="fa fa-tooth fa-fw"></i></div>
                                 <div class="stats-content">
-                                    <div class="stats-title">PENDING ORDERS</div>
-                                    <div class="stats-number"><span data-animation="number" data-value="<?= $pendingOrdersCount ?>">0</span></div>
+                                    <div class="stats-title">TOTAL FOOD PRODUCTS</div>
+                                    <div class="stats-number"><span data-animation="number" data-value="<?= $foodCount ?>">0</span></div>
                                     <div class="stats-progress progress">
-                                        <div class="progress-bar" style="width: 23.5%;"></div>
+                                        <div class="progress-bar" style="width: 71.4%;"></div>
                                     </div>
-                                    <div class="stats-desc">More than last week (23.5%)</div>
+                                    <div class="stats-desc">Better than last week (71.4%)</div>
                                 </div>
                             </div>
                         </div>
-                        <!-- END col-4 -->
-                        <!-- BEGIN col-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="widget widget-stats bg-pink mb-7px">
-                                <div class="stats-icon stats-icon-lg"><i class="fa fa-exclamation-triangle fa-fw"></i></div>
-                                <div class="stats-content">
-                                    <div class="stats-title">CANCELLED ORDERS</div>
-                                    <div class="stats-number"><span data-animation="number" data-value="<?= $cancelledOrdersCount ?>">0</span></div>
-                                    <div class="stats-progress progress">
-                                        <div class="progress-bar" style="width: 10.5%;"></div>
-                                    </div>
-                                    <div class="stats-desc">More than last week (10.5%)</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END col-4 -->
                     </div>
 				</div>
 			</div>
