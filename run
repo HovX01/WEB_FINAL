@@ -1,0 +1,33 @@
+<?php
+
+use Core\App;
+use Core\Database;
+
+const BASE_PATH = __DIR__.'/';
+
+require __DIR__ . '/bootstrap.php';
+
+$command = $argv[1] ?? null;
+
+switch ($command) {
+    case 'migrate':
+        require BASE_PATH .'migrate.php';
+        break;
+
+    case 'seed':
+        require BASE_PATH .'seeder.php';
+        break;
+
+    case 'serve':
+        exec("php -S localhost:8000 -t public/");
+        // Code to start the server or handle other commands
+        break;
+
+    default:
+        echo "Command not recognized.";
+        echo "Please use one of the following commands:";
+        echo " - php run migrate";
+        echo " - php run seed";
+        echo " - php run serve";
+        break;
+}
